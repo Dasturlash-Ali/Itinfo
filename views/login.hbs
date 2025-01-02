@@ -26,7 +26,7 @@
         const author_password = document.getElementById('password').value
         try {
             console.log(email, password)
-            fetch("http://localhost:3030/api/author/login", {
+            fetch("http://45.92.173.42:3030/api/author/login", {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
