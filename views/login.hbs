@@ -1,0 +1,66 @@
+<form id="loginForm">
+    <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" aria-describedby="email" value="aliyevm193@gmail.com">
+
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" value="Bekjon05">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+<div id="welcome" style="display: none;">
+    <h3>IT-INFOGA xush kelibsiz</h3>
+</div>
+
+<script>
+
+    const form = document.getElementById('loginForm')
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault()
+        const author_email = document.getElementById('email').value
+        const author_password = document.getElementById('password').value
+        try {
+            console.log(email, password)
+            fetch("http://localhost:3030/api/author/login", {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },headers : {
+            "Content-Type" : "application/json"
+        }, body : JSON.stringify({
+                    author_email,
+                    author_password
+                })
+            })
+            .then((res) => {
+                console.log(res)
+                if (res.ok) {
+                    console.log("login succesfully")
+                    return res.json()
+                }
+                else {
+                    console.log("login failed")
+                }
+            })
+                .then((data) => {
+                    console.log(data)
+                    localStorage.setItem("accesToken", data.accesToken)
+                    form.style.display = "none"
+                    const welcome = document.getElementById("welcome")
+                    welcome.style.display = "block"
+                })
+                .catch((err) => {
+                    console.log("xatolik yuz berdi", err)
+                })
+
+        } catch (err) {
+            console.log(err)
+        }
+    })
+
+</script>

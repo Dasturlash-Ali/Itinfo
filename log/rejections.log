@@ -1,0 +1,8 @@
+2024-12-23T11:22:48.811Z error: uncaughtException: listen EADDRINUSE: address already in use :::3030
+Error: listen EADDRINUSE: address already in use :::3030
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at Server.listen (node:net:1953:7)
+    at Function.listen (/home/c5/Desktop/ITinfo/node_modules/express/lib/application.js:635:24)
+    at start (/home/c5/Desktop/ITinfo/app.js:39:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

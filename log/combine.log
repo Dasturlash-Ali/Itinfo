@@ -1,0 +1,5 @@
+2024-12-25T11:34:14.985Z error: E11000 duplicate key error collection: test.authors index: author_email_1 dup key: { author_email: "alivm193@gmail.com" }
+2024-12-25T12:48:15.890Z info: Server started at: http://localhost:3030
+2024-12-28T10:39:42.150Z info: Server started at: http://localhost:3030
+2024-12-28T10:47:01.897Z info: Server started at: http://localhost:3030
+2024-12-28T10:48:28.206Z info: Server started at: http://localhost:3030
